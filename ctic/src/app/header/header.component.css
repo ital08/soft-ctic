@@ -1,0 +1,41 @@
+:host{
+    display: block;
+  }
+
+  .intento{
+    display: flex;
+  }
+  .icons{
+    width: 9.4rem;
+  }
+  .icons i{
+    color:white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+
+  }
+  .link{
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    cursor:pointer;
+    color:  white;
+  }
+  .link:hover{
+    color: rgb(0, 0, 0);
+    padding-bottom: 0.5rem ;
+  }
+
+  .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 7%;
+    border-bottom: 0.1rem solid rgba(255,255,255,0.3);
+    background-color: rgb(7, 33, 70);
+  }
+  .image{
+    height: 3rem;
+    width: 20rem;
+    cursor: pointer;
+  }
