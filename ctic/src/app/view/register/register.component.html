@@ -1,12 +1,31 @@
-<h2>Registro de usuario</h2>
-<form [formGroup]="formReg" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
-        <label class="form-label">Email</label>
+<div class="text-center mb-10">
+
+    <div class="col-sm-12 mb-3 text-center">
+      <img src="assets/image/user1.jpg" alt="" style="border-radius: 50%; width: 150px; padding: 2rem">
+    </div>
+    <h1 class="text-dark mb-3">Registrar usuario</h1>
+    <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+    <div class="d-flex flex-wrap justify-content-center pb-lg-0">
+    <div class="col-sm-2 mb-1">
+        <label class="form-label">Correo Electrónico: </label>
         <input type="text" class="form-control" formControlName="email">
     </div>
-    <div class="mb-3">
-        <label class="form-label">Password</label>
+    </div>
+    <div class="d-flex flex-wrap justify-content-center pb-lg-0">
+    <div class="col-sm-2 mb-1">
+        <label class="form-label">Contraseña: </label>
         <input type="password" class="form-control" formControlName="password">
     </div>
-    <button class="btn btn-danger">Registrarme</button>
-</form>
+    </div>
+    <div class="d-flex flex-wrap justify-content-center pb-lg-0">
+      <div class="col-sm-4 mb-3 mt-2">
+        <button class="btn btn-success mt-3" (ngSubmit)="onSubmit()">
+          Registrarme
+        </button>
+      </div>
+    </div>
+
+        </form>
+</div>
+
+

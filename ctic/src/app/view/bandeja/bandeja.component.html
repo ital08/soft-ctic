@@ -1,1 +1,58 @@
-<p>bandeja works!</p>
+<br>
+<div class="row">
+  <div class="col-md-12 text-end">
+    <a routerLink="usuario-nuevo" class="btn btn-info">
+      Nuevo Usuario&nbsp; <i class="bi bi-plus-lg"></i>
+    </a>
+  </div>
+</div>
+<br>
+<div class="card">
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Nombres</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Rol</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Juan Perez</td>
+          <td>jperez@uni.pe</td>
+          <td>Jefe del Proyecto</td>
+            <button routerLink="usuario-editar"  class="btn btn-primary" >Editar</button>
+            <button  class="col-sm-4 mb-3 mt-2" class="btn btn-danger">Eliminar</button>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>2</td>
+          <td>María Valderrama</td>
+          <td>mvalderrama@uni.pe</td>
+          <td>Equipo</td>
+          <button routerLink="usuario-editar"  class="btn btn-primary" >Editar</button>
+            <button  class="col-sm-4 mb-3 mt-2" class="btn btn-danger">Eliminar</button>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>3</td>
+          <td>René Martinez</td>
+          <td>rmartinez@uni.pe</td>
+          <td>Equipo</td>
+          <button routerLink="usuario-editar"  class="btn btn-primary" >Editar</button>
+          <button  class="col-sm-4 mb-3 mt-2" class="btn btn-danger">Eliminar</button>
+        </tr>
+      </tbody>
+
+
+    </table>
+  </div>
+
+</div>
+
