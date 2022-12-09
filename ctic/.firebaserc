@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ctic-login": {
+      "hosting": {
+        "ctic": [
+          "ctic-login"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ctic-login"
+  }
+}
