@@ -15,6 +15,6 @@ namespace cticbackend.model
         public string correo { get; set; }
         public string contrasena { get; set; }
         public string telefono { get; set; }
-        public int rol { get; set; }
+        public int id_rol { get; set; }
     }
 }

@@ -37,7 +37,7 @@ namespace cticbackend.data.repositorio.data
                              id_rol = @Id_rol
                          WHERE id = @Id
                        ";
-            var resultado = await db.ExecuteAsync(sql, new { usuario.nombre, usuario.apellido, usuario.dni, usuario.correo, usuario.contrasena, usuario.telefono, usuario.rol, usuario.id });
+            var resultado = await db.ExecuteAsync(sql, new { usuario.nombre, usuario.apellido, usuario.dni, usuario.correo, usuario.contrasena, usuario.telefono, usuario.id_rol, usuario.id });
             return resultado > 0;
         }
 
@@ -52,14 +52,14 @@ namespace cticbackend.data.repositorio.data
             return resultado > 0;
         }
 
-        public async Task<IEnumerable<usuario_detalles>> Obtener_Lista_Usuarios()
+        public async Task<IEnumerable<usuario>> Obtener_Lista_Usuarios()
         {
             var db = dbConnection();
             var sql = @"
-                         SELECT u.id, u.nombre, u.apellido, u.correo, u.contrasena, u.dni, u.telefono, r.nombre_rol
-                         FROM usuario as u,rol as r WHERE u.id_rol = r.id
+                         SELECT id, nombre, apellido, correo, contrasena, dni, telefono, id_rol
+                         FROM usuario
                        ";
-            return await db.QueryAsync<usuario_detalles>(sql, new {});
+            return await db.QueryAsync<usuario>(sql, new {});
         }
 
         public async Task<bool> Ingresar_Usuario(usuario usuario)
@@ -69,7 +69,7 @@ namespace cticbackend.data.repositorio.data
                          INSERT INTO usuario (nombre, apellido,dni,correo,contrasena,telefono,id_rol)
                          VALUES (@Nombre,@Apellido,@Dni,@Correo,@Contrasena,@Telefono,@Id_rol)
                        ";
-            var resultado = await db.ExecuteAsync(sql, new {usuario.id, usuario.nombre, usuario.apellido, usuario.dni, usuario.correo, usuario.contrasena, usuario.telefono, usuario.rol});
+            var resultado = await db.ExecuteAsync(sql, new {usuario.id, usuario.nombre, usuario.apellido, usuario.dni, usuario.correo, usuario.contrasena, usuario.telefono, usuario.id_rol});
             return resultado > 0; 
         }
 
@@ -166,5 +166,16 @@ namespace cticbackend.data.repositorio.data
             var resultado = await db.ExecuteAsync(sql, new { encargo_interno.id, encargo_interno.tipo_encargo, encargo_interno.fecha_solicitud, encargo_interno.id_usuario_solicitante, encargo_interno.id_proyecto, encargo_interno.id_estado_encargo});
             return resultado > 0;
         }
+
+        public async Task<usuario> Obtener_Usuario(int id)
+        {
+            var db = dbConnection();
+            var sql = @"
+                         SELECT id, nombre, apellido, correo, contrasena, dni, telefono, id_rol
+                         FROM usuario WHERE id = @Id
+                       ";
+            return await db.QueryFirstOrDefaultAsync<usuario>(sql, new { Id = id });
+        }
+
     }
 }

@@ -17,19 +17,27 @@ namespace cticbackend.Controllers
             _usuarioRepository = usuarioRepository;
         }
 
-        [HttpGet("Lista_Usuarios")]
+        [HttpGet()]
         public async Task<IActionResult> ObtenerUsuarios()
         {
             return Ok(await _usuarioRepository.Obtener_Lista_Usuarios());
         }
 
-        [HttpGet("Autenticar_Usuario {id},{correo},{contrasena}")]
-        public async Task<IActionResult> Autenticacion_Contrasena(int id, string correo, string contrasena)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> ObtenerUsuario(int id)
         {
-            return Ok(await _usuarioRepository.Autenticacion_Usuario(id,correo,contrasena));
+            return Ok(await _usuarioRepository.Obtener_Usuario(id));
         }
 
-        [HttpPost("Ingresar_Usuario")]
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> EliminarUsuario(int id)
+        {
+            await _usuarioRepository.Borrar_Usuario(new usuario { id = id });
+
+            return NoContent();
+        }
+
+        [HttpPost()]
         public async Task<IActionResult> IngresarUsuario([FromBody] usuario usuario)
         {
             if (usuario == null)
@@ -43,7 +51,7 @@ namespace cticbackend.Controllers
             return Created("created", created);
         }
 
-        [HttpPut("Actualizar_Usuario")]
+        [HttpPut()]
         public async Task<IActionResult> ActualizarUsuario([FromBody] usuario usuario)
         {
             if (usuario == null)
@@ -53,14 +61,6 @@ namespace cticbackend.Controllers
                 return BadRequest(ModelState);
 
             await _usuarioRepository.Actualizar_Usuario(usuario);
-
-            return NoContent();
-        }
-
-        [HttpDelete("Eliminar_Usuario{id}")]
-        public async Task<IActionResult> EliminarUsuario(int id)
-        {
-            await _usuarioRepository.Borrar_Usuario(new usuario {id = id});
 
             return NoContent();
         }

@@ -9,7 +9,7 @@ namespace cticbackend.data.repositorio.data
 {
     public interface interface_data
     {
-        Task<IEnumerable<usuario_detalles>> Obtener_Lista_Usuarios();
+        Task<IEnumerable<usuario>> Obtener_Lista_Usuarios();
         Task<autenticacion_usuario> Autenticacion_Usuario(int id, string correo, string contrasena);
         Task<bool> Ingresar_Usuario(usuario usuario);
 
@@ -26,6 +26,7 @@ namespace cticbackend.data.repositorio.data
         Task<IEnumerable<encargo_interno_detalles>> Obtener_Lista_Encargos();
         Task<bool> Registrar_Evaluacion(observacion_encargo observacion_encargo);
         Task<bool> Registrar_Encargo_Interno(encargo_interno encargo_interno);
+        Task<usuario> Obtener_Usuario(int id);
 
     }
 }
