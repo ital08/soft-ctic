@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: 'bandeja',
     component: BandejaComponent
-  }
+  },
 ];
 
 @NgModule({
