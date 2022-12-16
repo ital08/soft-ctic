@@ -47,17 +47,6 @@ export class ListaProyectosComponent implements OnInit, AfterViewInit {
       this.dataSource.data = data;
     })
   }
- 
-
-  eliminarProyecto(id: number) {
-    this.loading = true;
-
-    this._proyectoService.deleteProyecto(id).subscribe(() => {
-     this.mensajeExito();
-     this.loading = false;
-     this.obtenerProyectos();
-    });    
-  }
 
   mensajeExito() {
     this._snackBar.open('El Proyecto fue eliminado con exito','', {

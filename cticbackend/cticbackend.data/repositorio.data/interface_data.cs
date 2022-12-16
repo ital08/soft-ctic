@@ -21,7 +21,6 @@ namespace cticbackend.data.repositorio.data
         Task<bool> Ingresar_Proyecto(proyecto proyecto);
 
         Task<bool> Actualizar_Proyecto(proyecto proyecto);
-        Task<bool> Eliminar_Proyecto(proyecto proyecto);
 
         Task<IEnumerable<encargo_interno_detalles>> Obtener_Lista_Encargos();
         Task<bool> Registrar_Evaluacion(observacion_encargo observacion_encargo);
@@ -29,6 +28,5 @@ namespace cticbackend.data.repositorio.data
         Task<usuario> Obtener_Usuario(int id);
 
         Task<proyecto_detalles> Obtener_Proyecto(int id);
-
     }
 }

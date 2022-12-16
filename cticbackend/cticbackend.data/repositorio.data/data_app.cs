@@ -48,7 +48,7 @@ namespace cticbackend.data.repositorio.data
                          DELETE FROM usuario
                          WHERE id = @Id
                        ";
-            var resultado = await db.ExecuteAsync(sql, new {Id = usuario.id });
+            var resultado = await db.ExecuteAsync(sql, new {Id_usuario_responsable = usuario.id, Id = usuario.id });
             return resultado > 0;
         }
 
@@ -109,7 +109,7 @@ namespace cticbackend.data.repositorio.data
         {
             var db = dbConnection();
             var sql = @"
-                         SELECT e.id,e.tipo_encargo,e.fecha_solicitud,e.fecha_respuesta,
+                         SELECT e.id,e.tipo_encargo,e.fecha_solicitud,e.fecha_respuesta, e.id_usuario_solicitante,
                                 u.nombre,u.apellido,p.nombre_proyecto,ei.nombre_estado,e.observacion
                          FROM encargo_interno as e, usuario as u, estado_encargo as ei, proyecto as p
                          WHERE e.id_usuario_solicitante = u.id AND e.id_proyecto = p.id
@@ -128,17 +128,6 @@ namespace cticbackend.data.repositorio.data
                          WHERE id = @Id
                        ";
             var resultado = await db.ExecuteAsync(sql, new {proyecto.id_usuario_responsable,proyecto.nombre_proyecto,proyecto.id });
-            return resultado > 0;
-        }
-
-        public async Task<bool> Eliminar_Proyecto(proyecto proyecto)
-        {
-            var db = dbConnection();
-            var sql = @"
-                         DELETE FROM proyecto
-                         WHERE id = @Id
-                       ";
-            var resultado = await db.ExecuteAsync(sql, new { Id = proyecto.id });
             return resultado > 0;
         }
 
@@ -186,5 +175,6 @@ namespace cticbackend.data.repositorio.data
                        ";
             return await db.QueryFirstOrDefaultAsync<proyecto_detalles>(sql, new { Id = id });
         }
+
     }
 }

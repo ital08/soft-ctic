@@ -30,13 +30,6 @@ namespace cticbackend.Controllers
             return Ok(await _proyectoRepository.Obtener_Proyecto(id));
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> EliminarProyecta(int id)
-        {
-            await _proyectoRepository.Eliminar_Proyecto(new proyecto { id = id });
-
-            return NoContent();
-        }
 
         [HttpPost()]
         public async Task<IActionResult> IngresarProyecto([FromBody] proyecto proyecto)

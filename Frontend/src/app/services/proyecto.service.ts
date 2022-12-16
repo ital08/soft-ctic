@@ -30,8 +30,4 @@ export class ProyectoService {
     return this.http.get<DetalleProyecto>(`${this.myAppUrl}${this.myApiUrl}${id}`);
   }
 
-  deleteProyecto(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.myAppUrl}${this.myApiUrl}${id}`);
-  }
-
 }
