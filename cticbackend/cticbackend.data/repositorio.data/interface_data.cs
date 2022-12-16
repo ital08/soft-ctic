@@ -28,5 +28,7 @@ namespace cticbackend.data.repositorio.data
         Task<bool> Registrar_Encargo_Interno(encargo_interno encargo_interno);
         Task<usuario> Obtener_Usuario(int id);
 
+        Task<proyecto_detalles> Obtener_Proyecto(int id);
+
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jose Carlos\\OneDrive - UNIVERSIDAD NACIONAL DE INGENIERIA\\Desktop\\ctic\\cticbackend\\cticbackend.model\\cticbackend.model.csproj": {}
+    "C:\\Users\\Jose Carlos\\OneDrive - UNIVERSIDAD NACIONAL DE INGENIERIA\\Desktop\\soft-ctic\\cticbackend\\cticbackend.model\\cticbackend.model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jose Carlos\\OneDrive - UNIVERSIDAD NACIONAL DE INGENIERIA\\Desktop\\ctic\\cticbackend\\cticbackend.model\\cticbackend.model.csproj": {
+    "C:\\Users\\Jose Carlos\\OneDrive - UNIVERSIDAD NACIONAL DE INGENIERIA\\Desktop\\soft-ctic\\cticbackend\\cticbackend.model\\cticbackend.model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jose Carlos\\OneDrive - UNIVERSIDAD NACIONAL DE INGENIERIA\\Desktop\\ctic\\cticbackend\\cticbackend.model\\cticbackend.model.csproj",
+        "projectUniqueName": "C:\\Users\\Jose Carlos\\OneDrive - UNIVERSIDAD NACIONAL DE INGENIERIA\\Desktop\\soft-ctic\\cticbackend\\cticbackend.model\\cticbackend.model.csproj",
         "projectName": "cticbackend.model",
-        "projectPath": "C:\\Users\\Jose Carlos\\OneDrive - UNIVERSIDAD NACIONAL DE INGENIERIA\\Desktop\\ctic\\cticbackend\\cticbackend.model\\cticbackend.model.csproj",
+        "projectPath": "C:\\Users\\Jose Carlos\\OneDrive - UNIVERSIDAD NACIONAL DE INGENIERIA\\Desktop\\soft-ctic\\cticbackend\\cticbackend.model\\cticbackend.model.csproj",
         "packagesPath": "C:\\Users\\Jose Carlos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jose Carlos\\OneDrive - UNIVERSIDAD NACIONAL DE INGENIERIA\\Desktop\\ctic\\cticbackend\\cticbackend.model\\obj\\",
+        "outputPath": "C:\\Users\\Jose Carlos\\OneDrive - UNIVERSIDAD NACIONAL DE INGENIERIA\\Desktop\\soft-ctic\\cticbackend\\cticbackend.model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jose Carlos\\AppData\\Roaming\\NuGet\\NuGet.Config",

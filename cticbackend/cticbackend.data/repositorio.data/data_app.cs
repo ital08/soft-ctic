@@ -177,5 +177,14 @@ namespace cticbackend.data.repositorio.data
             return await db.QueryFirstOrDefaultAsync<usuario>(sql, new { Id = id });
         }
 
+        public async Task<proyecto_detalles> Obtener_Proyecto(int id)
+        {
+            var db = dbConnection();
+            var sql = @"
+                         select p.id,p.fecha_registro,p.id_usuario_responsable, u.nombre, u.apellido, p.nombre_proyecto
+                         FROM proyecto as p, usuario as u WHERE p.id_usuario_responsable = u.id AND p.id = @Id
+                       ";
+            return await db.QueryFirstOrDefaultAsync<proyecto_detalles>(sql, new { Id = id });
+        }
     }
 }

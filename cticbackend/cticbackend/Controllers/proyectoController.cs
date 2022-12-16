@@ -18,13 +18,27 @@ namespace cticbackend.Controllers
             _proyectoRepository = proyectoRepository;
         }
 
-        [HttpGet("Lista_Proyectos")]
+        [HttpGet()]
         public async Task<IActionResult> ObtenerProyectos()
         {
             return Ok(await _proyectoRepository.Obtener_Lista_Proyectos());
         }
 
-        [HttpPost("Ingresar_Proyecto")]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> ObtenerProyecto(int id)
+        {
+            return Ok(await _proyectoRepository.Obtener_Proyecto(id));
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> EliminarProyecta(int id)
+        {
+            await _proyectoRepository.Eliminar_Proyecto(new proyecto { id = id });
+
+            return NoContent();
+        }
+
+        [HttpPost()]
         public async Task<IActionResult> IngresarProyecto([FromBody] proyecto proyecto)
         {
             if (proyecto == null)
@@ -38,7 +52,7 @@ namespace cticbackend.Controllers
             return Created("created", created);
         }
 
-        [HttpPut("Actualizar_Proyecto")]
+        [HttpPut()]
         public async Task<IActionResult> ActualizarProyecto([FromBody] proyecto proyecto)
         {
             if (proyecto == null)
@@ -48,14 +62,6 @@ namespace cticbackend.Controllers
                 return BadRequest(ModelState);
 
             await _proyectoRepository.Actualizar_Proyecto(proyecto);
-
-            return NoContent();
-        }
-
-        [HttpDelete("Eliminar_Proyecto{id}")]
-        public async Task<IActionResult> EliminarProyecta(int id)
-        {
-            await _proyectoRepository.Eliminar_Proyecto(new proyecto { id = id });
 
             return NoContent();
         }
