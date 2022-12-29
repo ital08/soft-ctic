@@ -16,6 +16,9 @@ import { ListaProyectosComponent } from './components/lista-proyectos/lista-proy
 import { VerProyectoComponent } from './components/ver-proyecto/ver-proyecto.component';
 import { ProyectoEditarComponent } from './components/proyecto-editar/proyecto-editar.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MenuAdministradorComponent } from './components/menu-administrador/menu-administrador.component';
+import { MenuJefeComponent } from './components/menu-jefe/menu-jefe.component';
+import { MenuDirectorComponent } from './components/menu-director/menu-director.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     AgregarEditarUsuarioComponent,
     ListaProyectosComponent,
     VerProyectoComponent,
-    ProyectoEditarComponent
+    ProyectoEditarComponent,
+    MenuAdministradorComponent,
+    MenuJefeComponent,
+    MenuDirectorComponent
   ],
   imports: [
     BrowserModule,
